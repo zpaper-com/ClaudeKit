@@ -194,6 +194,17 @@
       ],
       "commands": [],
       "hooks": []
+    },
+    {
+      "name": "elysia-expert",
+      "description": "Elysia v1.4+ expert with Standard Schema support, macros, and type-safe patterns",
+      "source": "./",
+      "version": "1.0.0",
+      "agents": [
+        "./.claude/agents/elysia-expert.md"
+      ],
+      "commands": [],
+      "hooks": []
     }
   ]
 }
