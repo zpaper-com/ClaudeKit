@@ -147,7 +147,78 @@ serve({
 
 ### Database Support
 
-**Unified SQL API:**
+**Bun.SQL - Native MySQL Client:**
+
+Bun.SQL uses tagged template literals for safe, SQL-injection-proof queries. Up to 9x faster than mysql2.
+
+```typescript
+import { SQL } from "bun";
+
+// Connection setup
+const mysql = new SQL("mysql://user:password@127.0.0.1:3306/database");
+
+// Or with options
+const mysql = new SQL({
+  adapter: "mysql",
+  hostname: "127.0.0.1",
+  port: 3306,
+  username: "user",
+  password: "password",
+  database: "mydb",
+  max: 20,              // Connection pool size
+  idleTimeout: 30,      // Close idle connections after 30s
+});
+
+// SELECT with parameters (always use tagged templates!)
+const users = await mysql`
+  SELECT * FROM users
+  WHERE active = ${true}
+  AND age >= ${18}
+`;
+
+// INSERT with object
+await mysql`INSERT INTO users ${mysql({ name: "Alice", email: "alice@example.com" })}`;
+const [result] = await mysql`SELECT LAST_INSERT_ID() as id`;
+
+// UPDATE with object
+const updates = { name: "Alice Smith", age: 26 };
+await mysql`UPDATE users SET ${mysql(updates)} WHERE id = ${userId}`;
+
+// DELETE
+await mysql`DELETE FROM users WHERE id = ${userId}`;
+
+// WHERE IN with array
+const userIds = [1, 2, 3];
+const users = await mysql`SELECT * FROM users WHERE id IN ${mysql(userIds)}`;
+
+// Transactions (auto-commit/rollback)
+await mysql.begin(async tx => {
+  await tx`INSERT INTO users (name) VALUES (${"Alice"})`;
+  await tx`UPDATE accounts SET balance = balance - 100 WHERE user_id = 1`;
+  // Auto-commits if no errors, auto-rolls back on error
+});
+
+// Connection pooling (automatic)
+const reserved = await mysql.reserve();
+try {
+  await reserved`INSERT INTO users (name) VALUES (${"Alice"})`;
+  await reserved`SELECT LAST_INSERT_ID()`;
+} finally {
+  reserved.release(); // Always release!
+}
+
+// Close connections
+await mysql.close();
+```
+
+**Critical Rules for Bun.SQL:**
+- ✅ Always use tagged template literals: `mysql\`SELECT...\``
+- ✅ Use `mysql(object)` helper for inserts/updates
+- ✅ Use `mysql([array])` for WHERE IN clauses
+- ❌ Never concatenate user input into SQL strings
+- ❌ Never use `mysql.unsafe()` unless explicitly requested
+
+**Unified SQL API (Alternative):**
 ```typescript
 import { Database } from 'bun:sql';
 
@@ -491,5 +562,6 @@ bun --hot run server.ts
 - GitHub: https://github.com/oven-sh/bun
 - Discord: https://bun.sh/discord
 - Examples: https://github.com/oven-sh/bun/tree/main/examples
+- **Bun.SQL MySQL Reference**: For comprehensive MySQL usage patterns, see the detailed reference guide at docs/references/BUN_SQL_MYSQL_REFERENCE.md in the ClaudeKit repository
 
-When helping users, always consider Bun-native solutions first, provide working code examples, and explain the performance or DX benefits of using Bun's built-in features.
+When helping users, always consider Bun-native solutions first, provide working code examples, and explain the performance or DX benefits of using Bun's built-in features. For MySQL operations, prefer Bun.SQL's tagged template literals over the unified SQL API for maximum performance and safety.

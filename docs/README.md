@@ -10,6 +10,11 @@ Reference documentation and release notes for technologies supported by ClaudeKi
 ### Elysia
 - [Elysia v1.4 "Supersymmetry" Release Notes](./releases/ELYSIA_V1.4_RELEASE.md) - Standard Schema support, enhanced macros, and complete type soundness
 
+## Reference Guides
+
+### Bun.SQL
+- [Bun.SQL MySQL Reference Guide](./references/BUN_SQL_MYSQL_REFERENCE.md) - Comprehensive MySQL client guide with tagged template literals, connection pooling, transactions, and performance tips
+
 ## Related Agents
 
 These release notes complement the following ClaudeKit agents:
