@@ -1,0 +1,157 @@
+{
+  "name": "colorful-statusline",
+  "description": "Colorful status line with emojis and visual indicators for Claude Code",
+  "category": "statusline",
+  "settings": {
+    "statusLine": {
+      "format": "{icon} {status} {branch} {files} {time}",
+      "useEmojis": true,
+      "useColors": true,
+      "showTimestamp": true,
+      "showFileCount": true,
+      "refreshInterval": 1000
+    }
+  },
+  "components": {
+    "icon": {
+      "description": "Status icon indicator",
+      "values": {
+        "idle": "💤",
+        "thinking": "🤔",
+        "working": "⚙️",
+        "success": "✅",
+        "error": "❌",
+        "warning": "⚠️"
+      }
+    },
+    "status": {
+      "description": "Current operation status",
+      "colors": {
+        "idle": "gray",
+        "thinking": "blue",
+        "working": "yellow",
+        "success": "green",
+        "error": "red",
+        "warning": "orange"
+      }
+    },
+    "branch": {
+      "description": "Current git branch",
+      "format": "({branch_name})",
+      "icon": "🌿",
+      "showWhenNoGit": false
+    },
+    "files": {
+      "description": "Modified files count",
+      "format": "📝 {count} files",
+      "showWhenZero": false
+    },
+    "time": {
+      "description": "Current time",
+      "format": "⏰ {HH:MM:SS}",
+      "use24Hour": true
+    }
+  },
+  "themes": {
+    "default": {
+      "idle": "💤 Ready",
+      "thinking": "🤔 Thinking...",
+      "working": "⚙️ Working...",
+      "reading": "📖 Reading files...",
+      "writing": "✍️ Writing files...",
+      "searching": "🔍 Searching...",
+      "analyzing": "🔬 Analyzing...",
+      "testing": "🧪 Testing...",
+      "building": "🏗️ Building...",
+      "deploying": "🚀 Deploying...",
+      "success": "✅ Complete",
+      "error": "❌ Error",
+      "warning": "⚠️ Warning"
+    },
+    "minimal": {
+      "idle": "• Ready",
+      "thinking": "◌ Thinking",
+      "working": "◉ Working",
+      "success": "✓ Done",
+      "error": "✗ Error"
+    },
+    "nerd": {
+      "idle": " Ready",
+      "thinking": " Thinking",
+      "working": " Working",
+      "reading": " Reading",
+      "writing": " Writing",
+      "searching": " Searching",
+      "success": " Done",
+      "error": " Error"
+    }
+  },
+  "colorSchemes": {
+    "vibrant": {
+      "idle": "#6B7280",
+      "thinking": "#3B82F6",
+      "working": "#F59E0B",
+      "success": "#10B981",
+      "error": "#EF4444",
+      "warning": "#F97316"
+    },
+    "pastel": {
+      "idle": "#9CA3AF",
+      "thinking": "#93C5FD",
+      "working": "#FCD34D",
+      "success": "#6EE7B7",
+      "error": "#FCA5A5",
+      "warning": "#FDBA74"
+    },
+    "dark": {
+      "idle": "#4B5563",
+      "thinking": "#1D4ED8",
+      "working": "#D97706",
+      "success": "#059669",
+      "error": "#DC2626",
+      "warning": "#EA580C"
+    }
+  },
+  "examples": [
+    {
+      "name": "Default (Colorful with Emojis)",
+      "format": "⚙️ Working... 🌿 (main) 📝 3 files ⏰ 14:23:45"
+    },
+    {
+      "name": "Minimal",
+      "format": "◉ Working (main) 3 files"
+    },
+    {
+      "name": "Simple",
+      "format": "Working... [main] (3 modified)"
+    },
+    {
+      "name": "Detailed",
+      "format": "🤖 Claude: ⚙️ Working on task | 🌿 Branch: main | 📝 Files: 3 modified | ⏰ 14:23:45"
+    }
+  ],
+  "customization": {
+    "description": "Customize your status line appearance",
+    "instructions": [
+      "1. Choose a theme (default, minimal, nerd)",
+      "2. Select a color scheme (vibrant, pastel, dark)",
+      "3. Toggle emojis on/off with useEmojis setting",
+      "4. Adjust format string to show/hide components",
+      "5. Set refresh interval for time updates"
+    ],
+    "formatTokens": {
+      "{icon}": "Status icon based on current activity",
+      "{status}": "Status text (e.g., 'Working', 'Complete')",
+      "{branch}": "Current git branch name",
+      "{files}": "Count of modified files",
+      "{time}": "Current time",
+      "{project}": "Project/directory name",
+      "{model}": "Claude model being used"
+    }
+  },
+  "configuration": {
+    "location": ".claude/settings/statusline.json",
+    "override": true,
+    "priority": "user"
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "name": "claudekit",
+  "version": "1.0.0",
+  "description": "Production-ready Claude Code toolkit with essential development agents",
+  "author": "zpaper-com",
+  "repository": "https://github.com/zpaper-com/ClaudeKit",
+  "license": "MIT",
+  "plugins": [
+    {
+      "id": "fullstack-pro",
+      "name": "Full-Stack Pro",
+      "description": "Complete full-stack development toolkit with frontend, backend, database, and TypeScript expertise",
+      "category": "development",
+      "version": "1.0.0",
+      "icon": "🚀",
+      "components": {
+        "agents": [
+          "frontend-developer",
+          "backend-architect",
+          "fullstack-developer",
+          "database-architect",
+          "typescript-pro"
+        ],
+        "commands": [],
+        "hooks": []
+      },
+      "tags": ["fullstack", "development", "typescript", "database"]
+    },
+    {
+      "id": "code-quality-suite",
+      "name": "Code Quality Suite",
+      "description": "Comprehensive code quality toolkit with review, refactoring, debugging, and testing",
+      "category": "quality",
+      "version": "1.0.0",
+      "icon": "✨",
+      "components": {
+        "agents": [
+          "code-reviewer",
+          "debugger",
+          "test-engineer"
+        ],
+        "commands": [
+          "code-review",
+          "refactor-code"
+        ],
+        "hooks": []
+      },
+      "tags": ["quality", "testing", "code-review", "refactoring"]
+    },
+    {
+      "id": "documentation-master",
+      "name": "Documentation Master",
+      "description": "Complete documentation suite for architecture, APIs, and project docs",
+      "category": "documentation",
+      "version": "1.0.0",
+      "icon": "📚",
+      "components": {
+        "agents": [
+          "api-documenter"
+        ],
+        "commands": [
+          "create-architecture-documentation",
+          "generate-api-documentation",
+          "update-docs"
+        ],
+        "hooks": []
+      },
+      "tags": ["documentation", "api", "architecture"]
+    },
+    {
+      "id": "product-workflow",
+      "name": "Product Workflow",
+      "description": "Product management and release workflow with PRDs and changelogs",
+      "category": "management",
+      "version": "1.0.0",
+      "icon": "📋",
+      "components": {
+        "agents": [],
+        "commands": [
+          "create-prd",
+          "add-changelog"
+        ],
+        "hooks": [
+          "git-commit-settings"
+        ]
+      },
+      "tags": ["product-management", "releases", "planning"]
+    },
+    {
+      "id": "ui-ux-studio",
+      "name": "UI/UX Studio",
+      "description": "Design-focused toolkit with UI/UX expertise and visual status indicators",
+      "category": "design",
+      "version": "1.0.0",
+      "icon": "🎨",
+      "components": {
+        "agents": [
+          "ui-ux-designer",
+          "frontend-developer"
+        ],
+        "commands": [],
+        "hooks": [
+          "colorful-statusline"
+        ]
+      },
+      "tags": ["design", "ui", "ux", "frontend"]
+    },
+    {
+      "id": "architect-toolkit",
+      "name": "Architect Toolkit",
+      "description": "Senior-level architecture review and system design guidance",
+      "category": "architecture",
+      "version": "1.0.0",
+      "icon": "🏗️",
+      "components": {
+        "agents": [
+          "architect-review",
+          "backend-architect",
+          "database-architect"
+        ],
+        "commands": [
+          "create-architecture-documentation"
+        ],
+        "hooks": []
+      },
+      "tags": ["architecture", "system-design", "review"]
+    },
+    {
+      "id": "git-workflow-pro",
+      "name": "Git Workflow Pro",
+      "description": "Enhanced git workflow with smart commits, branch tracking, and changelogs",
+      "category": "git",
+      "version": "1.0.0",
+      "icon": "🌿",
+      "components": {
+        "agents": [],
+        "commands": [
+          "add-changelog"
+        ],
+        "hooks": [
+          "git-commit-settings",
+          "git-branch-statusline"
+        ]
+      },
+      "tags": ["git", "workflow", "commits", "branches"]
+    },
+    {
+      "id": "devops-complete",
+      "name": "DevOps Complete",
+      "description": "Full DevOps toolkit with CI/CD expertise and deployment workflows",
+      "category": "devops",
+      "version": "1.0.0",
+      "icon": "⚙️",
+      "components": {
+        "agents": [
+          "devops-engineer"
+        ],
+        "commands": [
+          "add-changelog"
+        ],
+        "hooks": [
+          "git-commit-settings"
+        ]
+      },
+      "tags": ["devops", "ci-cd", "deployment", "automation"]
+    },
+    {
+      "id": "startup-essentials",
+      "name": "Startup Essentials",
+      "description": "Everything a startup needs: full-stack dev, product management, and quality tools",
+      "category": "bundle",
+      "version": "1.0.0",
+      "icon": "🚀",
+      "components": {
+        "agents": [
+          "fullstack-developer",
+          "ui-ux-designer",
+          "code-reviewer",
+          "test-engineer"
+        ],
+        "commands": [
+          "create-prd",
+          "code-review",
+          "generate-api-documentation",
+          "add-changelog"
+        ],
+        "hooks": [
+          "git-commit-settings",
+          "colorful-statusline"
+        ]
+      },
+      "tags": ["startup", "fullstack", "product", "mvp"]
+    },
+    {
+      "id": "enterprise-complete",
+      "name": "Enterprise Complete",
+      "description": "Enterprise-grade development with all agents, commands, and quality controls",
+      "category": "bundle",
+      "version": "1.0.0",
+      "icon": "🏢",
+      "components": {
+        "agents": [
+          "frontend-developer",
+          "backend-architect",
+          "fullstack-developer",
+          "ui-ux-designer",
+          "devops-engineer",
+          "code-reviewer",
+          "debugger",
+          "test-engineer",
+          "typescript-pro",
+          "database-architect",
+          "architect-review",
+          "api-documenter"
+        ],
+        "commands": [
+          "create-architecture-documentation",
+          "refactor-code",
+          "code-review",
+          "add-changelog",
+          "update-docs",
+          "create-prd",
+          "generate-api-documentation"
+        ],
+        "hooks": [
+          "git-commit-settings",
+          "colorful-statusline",
+          "git-branch-statusline"
+        ]
+      },
+      "tags": ["enterprise", "complete", "all-in-one"]
+    }
+  ],
+  "templates": [
+    {
+      "id": "development-team",
+      "name": "Development Team",
+      "description": "Core development team with frontend, backend, and fullstack developers plus UI/UX design",
+      "category": "development",
+      "version": "1.0.0",
+      "agents": [
+        {
+          "name": "frontend-developer",
+          "file": ".claude/agents/frontend-developer.md",
+          "specialization": "Modern frontend development with React, Vue, and web standards",
+          "category": "development-team"
+        },
+        {
+          "name": "backend-architect",
+          "file": ".claude/agents/backend-architect.md",
+          "specialization": "Scalable backend architecture and API design",
+          "category": "development-team"
+        },
+        {
+          "name": "fullstack-developer",
+          "file": ".claude/agents/fullstack-developer.md",
+          "specialization": "Full-stack development across frontend, backend, and infrastructure",
+          "category": "development-team"
+        },
+        {
+          "name": "ui-ux-designer",
+          "file": ".claude/agents/ui-ux-designer.md",
+          "specialization": "User interface design and user experience optimization",
+          "category": "development-team"
+        },
+        {
+          "name": "devops-engineer",
+          "file": ".claude/agents/devops-engineer.md",
+          "specialization": "CI/CD, containerization, and infrastructure automation",
+          "category": "development-team"
+        }
+      ],
+      "settings": {
+        "timeout": 120000,
+        "output_style": "detailed"
+      }
+    },
+    {
+      "id": "development-tools",
+      "name": "Development Tools",
+      "description": "Essential tools for code review, debugging, and testing",
+      "category": "tools",
+      "version": "1.0.0",
+      "agents": [
+        {
+          "name": "code-reviewer",
+          "file": ".claude/agents/code-reviewer.md",
+          "specialization": "Comprehensive code review with best practices and quality checks",
+          "category": "development-tools"
+        },
+        {
+          "name": "debugger",
+          "file": ".claude/agents/debugger.md",
+          "specialization": "Systematic debugging and issue resolution",
+          "category": "development-tools"
+        },
+        {
+          "name": "test-engineer",
+          "file": ".claude/agents/test-engineer.md",
+          "specialization": "Testing strategy, automation, and quality assurance",
+          "category": "development-tools"
+        }
+      ],
+      "settings": {
+        "timeout": 120000
+      }
+    },
+    {
+      "id": "programming-languages",
+      "name": "Programming Languages",
+      "description": "Language-specific expertise and best practices",
+      "category": "languages",
+      "version": "1.0.0",
+      "agents": [
+        {
+          "name": "typescript-pro",
+          "file": ".claude/agents/typescript-pro.md",
+          "specialization": "TypeScript type safety, advanced patterns, and best practices",
+          "category": "programming-languages"
+        }
+      ],
+      "settings": {
+        "timeout": 120000
+      }
+    },
+    {
+      "id": "database",
+      "name": "Database",
+      "description": "Database design, optimization, and management",
+      "category": "data",
+      "version": "1.0.0",
+      "agents": [
+        {
+          "name": "database-architect",
+          "file": ".claude/agents/database-architect.md",
+          "specialization": "Database schema design, query optimization, and scalability",
+          "category": "database"
+        }
+      ],
+      "settings": {
+        "timeout": 180000
+      }
+    },
+    {
+      "id": "expert-advisors",
+      "name": "Expert Advisors",
+      "description": "Senior-level architectural review and guidance",
+      "category": "architecture",
+      "version": "1.0.0",
+      "agents": [
+        {
+          "name": "architect-review",
+          "file": ".claude/agents/architect-review.md",
+          "specialization": "Comprehensive architectural review and system design guidance",
+          "category": "expert-advisors"
+        }
+      ],
+      "settings": {
+        "timeout": 180000
+      }
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation",
+      "description": "API documentation and technical writing",
+      "category": "docs",
+      "version": "1.0.0",
+      "agents": [
+        {
+          "name": "api-documenter",
+          "file": ".claude/agents/api-documenter.md",
+          "specialization": "Clear, comprehensive API documentation and examples",
+          "category": "documentation"
+        }
+      ],
+      "commands": [
+        {
+          "name": "create-architecture-documentation",
+          "file": ".claude/commands/create-architecture-documentation.md",
+          "description": "Create comprehensive architecture documentation"
+        },
+        {
+          "name": "update-docs",
+          "file": ".claude/commands/update-docs.md",
+          "description": "Update project documentation to reflect current codebase"
+        },
+        {
+          "name": "generate-api-documentation",
+          "file": ".claude/commands/generate-api-documentation.md",
+          "description": "Generate complete API documentation with examples"
+        }
+      ],
+      "settings": {
+        "timeout": 120000
+      }
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "description": "Code quality and maintenance utilities",
+      "category": "tools",
+      "version": "1.0.0",
+      "commands": [
+        {
+          "name": "refactor-code",
+          "file": ".claude/commands/refactor-code.md",
+          "description": "Refactor code for better quality and maintainability"
+        },
+        {
+          "name": "code-review",
+          "file": ".claude/commands/code-review.md",
+          "description": "Perform comprehensive code review"
+        }
+      ],
+      "settings": {
+        "timeout": 120000
+      }
+    },
+    {
+      "id": "deployment",
+      "name": "Deployment",
+      "description": "Release management and deployment utilities",
+      "category": "devops",
+      "version": "1.0.0",
+      "commands": [
+        {
+          "name": "add-changelog",
+          "file": ".claude/commands/add-changelog.md",
+          "description": "Create or update CHANGELOG.md following Keep a Changelog format"
+        }
+      ],
+      "settings": {
+        "timeout": 120000
+      }
+    },
+    {
+      "id": "project-management",
+      "name": "Project Management",
+      "description": "Product planning and requirements documentation",
+      "category": "management",
+      "version": "1.0.0",
+      "commands": [
+        {
+          "name": "create-prd",
+          "file": ".claude/commands/create-prd.md",
+          "description": "Create comprehensive Product Requirements Document"
+        }
+      ],
+      "settings": {
+        "timeout": 120000
+      }
+    },
+    {
+      "id": "global-hooks",
+      "name": "Global Hooks",
+      "description": "Global Claude Code configuration hooks",
+      "category": "configuration",
+      "version": "1.0.0",
+      "hooks": [
+        {
+          "name": "git-commit-settings",
+          "file": ".claude/hooks/git-commit-settings.json",
+          "description": "Configure git commit behavior and message formatting"
+        }
+      ]
+    },
+    {
+      "id": "statusline-hooks",
+      "name": "Status Line Hooks",
+      "description": "Customize Claude Code status line appearance",
+      "category": "ui",
+      "version": "1.0.0",
+      "hooks": [
+        {
+          "name": "colorful-statusline",
+          "file": ".claude/hooks/colorful-statusline.json",
+          "description": "Colorful status line with emojis and visual indicators"
+        },
+        {
+          "name": "git-branch-statusline",
+          "file": ".claude/hooks/git-branch-statusline.json",
+          "description": "Git-focused status line with branch info and repository status"
+        }
+      ]
+    }
+  ],
+  "hooks": [
+    {
+      "name": "git-commit-settings",
+      "file": ".claude/hooks/git-commit-settings.json",
+      "description": "Configure Claude Code's git commit behavior including message format, co-author attribution, and commit hooks",
+      "category": "global",
+      "tags": ["git", "commits", "configuration", "workflow"]
+    },
+    {
+      "name": "colorful-statusline",
+      "file": ".claude/hooks/colorful-statusline.json",
+      "description": "Colorful status line with emojis, visual indicators, and customizable themes for Claude Code",
+      "category": "statusline",
+      "tags": ["statusline", "ui", "visual", "customization", "themes"]
+    },
+    {
+      "name": "git-branch-statusline",
+      "file": ".claude/hooks/git-branch-statusline.json",
+      "description": "Git-focused status line displaying branch information, status indicators, and repository state",
+      "category": "statusline",
+      "tags": ["statusline", "git", "branch", "repository", "indicators"]
+    }
+  ],
+  "commands": [
+    {
+      "name": "create-architecture-documentation",
+      "file": ".claude/commands/create-architecture-documentation.md",
+      "description": "Create comprehensive architecture documentation including system overview, components, and technical decisions",
+      "category": "documentation",
+      "tags": ["documentation", "architecture", "diagrams", "system-design"]
+    },
+    {
+      "name": "refactor-code",
+      "file": ".claude/commands/refactor-code.md",
+      "description": "Refactor code to improve quality, maintainability, and performance while preserving functionality",
+      "category": "utilities",
+      "tags": ["refactoring", "code-quality", "maintainability", "clean-code"]
+    },
+    {
+      "name": "code-review",
+      "file": ".claude/commands/code-review.md",
+      "description": "Perform comprehensive code review evaluating correctness, quality, performance, security, and best practices",
+      "category": "utilities",
+      "tags": ["code-review", "quality", "security", "best-practices"]
+    },
+    {
+      "name": "add-changelog",
+      "file": ".claude/commands/add-changelog.md",
+      "description": "Create or update CHANGELOG.md following the Keep a Changelog specification with semantic versioning",
+      "category": "deployment",
+      "tags": ["changelog", "releases", "versioning", "documentation"]
+    },
+    {
+      "name": "update-docs",
+      "file": ".claude/commands/update-docs.md",
+      "description": "Update project documentation including README, API docs, configuration, and development guides",
+      "category": "documentation",
+      "tags": ["documentation", "readme", "maintenance", "technical-writing"]
+    },
+    {
+      "name": "create-prd",
+      "file": ".claude/commands/create-prd.md",
+      "description": "Create comprehensive Product Requirements Document including problem statement, goals, requirements, and timelines",
+      "category": "project-management",
+      "tags": ["prd", "requirements", "planning", "product-management"]
+    },
+    {
+      "name": "generate-api-documentation",
+      "file": ".claude/commands/generate-api-documentation.md",
+      "description": "Generate comprehensive API documentation with authentication, endpoints, examples, and error handling",
+      "category": "documentation",
+      "tags": ["api", "documentation", "openapi", "endpoints"]
+    }
+  ],
+  "agents": [
+    {
+      "name": "frontend-developer",
+      "file": ".claude/agents/frontend-developer.md",
+      "description": "Expert frontend developer specializing in modern web development",
+      "category": "development-team",
+      "tags": ["react", "vue", "javascript", "css", "frontend", "ui"]
+    },
+    {
+      "name": "code-reviewer",
+      "file": ".claude/agents/code-reviewer.md",
+      "description": "Meticulous code reviewer focused on quality and best practices",
+      "category": "development-tools",
+      "tags": ["code-review", "quality", "best-practices", "refactoring"]
+    },
+    {
+      "name": "backend-architect",
+      "file": ".claude/agents/backend-architect.md",
+      "description": "Senior backend architect for scalable server-side applications",
+      "category": "development-team",
+      "tags": ["backend", "architecture", "api", "database", "scalability"]
+    },
+    {
+      "name": "debugger",
+      "file": ".claude/agents/debugger.md",
+      "description": "Expert debugger for identifying and resolving software issues",
+      "category": "development-tools",
+      "tags": ["debugging", "troubleshooting", "analysis", "problem-solving"]
+    },
+    {
+      "name": "fullstack-developer",
+      "file": ".claude/agents/fullstack-developer.md",
+      "description": "Versatile fullstack developer with expertise across the entire stack",
+      "category": "development-team",
+      "tags": ["fullstack", "frontend", "backend", "database", "devops"]
+    },
+    {
+      "name": "ui-ux-designer",
+      "file": ".claude/agents/ui-ux-designer.md",
+      "description": "Skilled UI/UX designer for intuitive and accessible interfaces",
+      "category": "development-team",
+      "tags": ["ui", "ux", "design", "accessibility", "responsive"]
+    },
+    {
+      "name": "test-engineer",
+      "file": ".claude/agents/test-engineer.md",
+      "description": "Quality-focused test engineer specializing in comprehensive testing",
+      "category": "development-tools",
+      "tags": ["testing", "qa", "automation", "unit-tests", "e2e"]
+    },
+    {
+      "name": "typescript-pro",
+      "file": ".claude/agents/typescript-pro.md",
+      "description": "TypeScript expert focused on type-safe, maintainable code",
+      "category": "programming-languages",
+      "tags": ["typescript", "types", "javascript", "type-safety"]
+    },
+    {
+      "name": "database-architect",
+      "file": ".claude/agents/database-architect.md",
+      "description": "Database architect for efficient, scalable database systems",
+      "category": "database",
+      "tags": ["database", "sql", "nosql", "optimization", "schema"]
+    },
+    {
+      "name": "architect-review",
+      "file": ".claude/agents/architect-review.md",
+      "description": "Senior software architect providing comprehensive reviews",
+      "category": "expert-advisors",
+      "tags": ["architecture", "review", "design", "patterns", "best-practices"]
+    },
+    {
+      "name": "api-documenter",
+      "file": ".claude/agents/api-documenter.md",
+      "description": "Expert at creating clear, comprehensive API documentation",
+      "category": "documentation",
+      "tags": ["documentation", "api", "technical-writing", "openapi"]
+    },
+    {
+      "name": "devops-engineer",
+      "file": ".claude/agents/devops-engineer.md",
+      "description": "DevOps engineer focused on automation and infrastructure",
+      "category": "development-team",
+      "tags": ["devops", "ci-cd", "docker", "kubernetes", "automation"]
+    }
+  ]
+}

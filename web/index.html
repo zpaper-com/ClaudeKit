@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClaudeKit - Production-Ready Claude Code Toolkit</title>
+    <meta name="description" content="Production-ready Claude Code toolkit with essential development agents, commands, and workflows">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <pre class="ascii-logo">
+ ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗██╗  ██╗██╗████████╗
+██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝██║ ██╔╝██║╚══██╔══╝
+██║     ██║     ███████║██║   ██║██║  ██║█████╗  █████╔╝ ██║   ██║
+██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝  ██╔═██╗ ██║   ██║
+╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗██║  ██╗██║   ██║
+ ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝
+                    </pre>
+                    <p class="tagline">Production-Ready Claude Code Toolkit</p>
+                </div>
+                <nav class="nav">
+                    <a href="https://docs.claude.com/en/docs/claude-code" target="_blank">Claude Code</a>
+                    <a href="https://github.com/zpaper-com/ClaudeKit" target="_blank">GitHub</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="announcement">
+                <span class="badge">New</span>
+                <span>Plugin Marketplace Now Available - 10 ready-to-use plugins for your workflow</span>
+            </div>
+            <h1>Advanced tools to maximize your Claude Code AI development experience</h1>
+            <p class="subtitle">Self-contained toolkit with 12 agents, 7 commands, and 3 hooks - no external dependencies</p>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="category-filter">
+        <div class="container">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="agents">🤖 Agents</button>
+                <button class="category-btn" data-category="commands">⚡ Commands</button>
+                <button class="category-btn" data-category="hooks">🪝 Hooks</button>
+                <button class="category-btn" data-category="plugins">🔌 Plugins</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search agents, commands, hooks, or plugins..." />
+                <div class="search-meta">
+                    <span id="resultCount">22 results</span>
+                    <select id="sortSelect">
+                        <option value="name">Sort by Name</option>
+                        <option value="category">Sort by Category</option>
+                        <option value="type">Sort by Type</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column: Components -->
+                <div class="components-section">
+                    <!-- Plugins -->
+                    <div class="section" id="plugins-section">
+                        <h2>🔌 Plugins</h2>
+                        <p class="section-desc">Complete component collections for specific workflows</p>
+                        <div class="grid" id="pluginsGrid"></div>
+                    </div>
+
+                    <!-- Agents -->
+                    <div class="section" id="agents-section">
+                        <h2>🤖 Agents</h2>
+                        <p class="section-desc">AI specialists for domain-specific tasks</p>
+                        <div class="grid" id="agentsGrid"></div>
+                    </div>
+
+                    <!-- Commands -->
+                    <div class="section" id="commands-section">
+                        <h2>⚡ Commands</h2>
+                        <p class="section-desc">Executable operations and workflows</p>
+                        <div class="grid" id="commandsGrid"></div>
+                    </div>
+
+                    <!-- Hooks -->
+                    <div class="section" id="hooks-section">
+                        <h2>🪝 Hooks</h2>
+                        <p class="section-desc">Event-triggered configurations and customizations</p>
+                        <div class="grid" id="hooksGrid"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Stack Builder -->
+                <aside class="stack-builder">
+                    <div class="stack-builder-sticky">
+                        <h3>🚀 Build Your Stack</h3>
+                        <p class="stack-desc">Select components to generate your installation command</p>
+
+                        <div class="selected-items" id="selectedItems">
+                            <p class="empty-state">No components selected</p>
+                        </div>
+
+                        <div class="stack-actions">
+                            <button class="btn btn-secondary" id="clearBtn">Clear All</button>
+                            <button class="btn btn-primary" id="generateBtn">Generate Command</button>
+                        </div>
+
+                        <div class="install-command hidden" id="installCommand">
+                            <label>Installation Command:</label>
+                            <div class="command-box">
+                                <code id="commandText"></code>
+                                <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M13 6H7C6.44772 6 6 6.44772 6 7V13C6 13.5523 6.44772 14 7 14H13C13.5523 14 14 13.5523 14 13V7C14 6.44772 13.5523 6 13 6Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M3 10H2C1.44772 10 1 9.55228 1 9V3C1 2.44772 1.44772 2 2 2H8C8.55228 2 9 2.44772 9 3V4" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="quick-start">
+                            <h4>Quick Start</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Add ClaudeKit marketplace in Claude Code:</p>
+                            <div class="quick-install">
+                                <code>/plugin marketplace add zpaper-com/ClaudeKit</code>
+                                <button class="copy-btn" data-copy="/plugin marketplace add zpaper-com/ClaudeKit">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M13 6H7C6.44772 6 6 6.44772 6 7V13C6 13.5523 6.44772 14 7 14H13C13.5523 14 14 13.5523 14 13V7C14 6.44772 13.5523 6 13 6Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M3 10H2C1.44772 10 1 9.55228 1 9V3C1 2.44772 1.44772 2 2 2H8C8.55228 2 9 2.44772 9 3V4" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 ClaudeKit. MIT License.</p>
+                    <p>Built for <a href="https://claude.com/claude-code" target="_blank">Claude Code</a></p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/zpaper-com/ClaudeKit" target="_blank">GitHub</a>
+                    <a href="https://github.com/zpaper-com/ClaudeKit/issues" target="_blank">Report Issue</a>
+                    <a href="https://docs.claude.com/en/docs/claude-code" target="_blank">Docs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

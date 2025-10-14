@@ -1,0 +1,227 @@
+{
+  "name": "git-branch-statusline",
+  "description": "Status line focused on git branch information and repository status",
+  "category": "statusline",
+  "settings": {
+    "statusLine": {
+      "format": "{branch_icon} {branch_name} {status_indicators} {ahead_behind} {stash_count}",
+      "showBranchName": true,
+      "showBranchStatus": true,
+      "showAheadBehind": true,
+      "showStashCount": true,
+      "showRemoteBranch": true,
+      "updateInterval": 2000
+    }
+  },
+  "components": {
+    "branch_icon": {
+      "description": "Icon representing the git branch",
+      "default": "🌿",
+      "alternatives": {
+        "nerd_font": "",
+        "simple": "→",
+        "unicode": "⎇"
+      }
+    },
+    "branch_name": {
+      "description": "Current branch name",
+      "maxLength": 30,
+      "truncate": "ellipsis",
+      "highlightMain": true,
+      "highlightDevelop": true
+    },
+    "status_indicators": {
+      "description": "Git status indicators",
+      "symbols": {
+        "clean": "✓",
+        "modified": "●",
+        "added": "+",
+        "deleted": "-",
+        "renamed": "→",
+        "untracked": "?",
+        "conflicts": "!",
+        "staged": "✓"
+      },
+      "showCounts": true
+    },
+    "ahead_behind": {
+      "description": "Commits ahead/behind remote",
+      "format": "↑{ahead} ↓{behind}",
+      "showWhenZero": false,
+      "icons": {
+        "ahead": "↑",
+        "behind": "↓"
+      }
+    },
+    "stash_count": {
+      "description": "Number of stashed changes",
+      "format": "📦 {count}",
+      "showWhenZero": false,
+      "icon": "📦"
+    }
+  },
+  "branchTypes": {
+    "main": {
+      "names": ["main", "master"],
+      "icon": "🔵",
+      "color": "#3B82F6",
+      "important": true
+    },
+    "develop": {
+      "names": ["develop", "dev", "development"],
+      "icon": "🟢",
+      "color": "#10B981",
+      "important": true
+    },
+    "feature": {
+      "pattern": "^feature/.*",
+      "icon": "✨",
+      "color": "#8B5CF6",
+      "important": false
+    },
+    "bugfix": {
+      "pattern": "^(bugfix|fix)/.*",
+      "icon": "🐛",
+      "color": "#EF4444",
+      "important": true
+    },
+    "hotfix": {
+      "pattern": "^hotfix/.*",
+      "icon": "🔥",
+      "color": "#DC2626",
+      "important": true
+    },
+    "release": {
+      "pattern": "^release/.*",
+      "icon": "🚀",
+      "color": "#F59E0B",
+      "important": true
+    }
+  },
+  "statusColors": {
+    "clean": {
+      "name": "Clean working tree",
+      "color": "#10B981",
+      "icon": "✓"
+    },
+    "modified": {
+      "name": "Modified files",
+      "color": "#F59E0B",
+      "icon": "●"
+    },
+    "staged": {
+      "name": "Staged changes",
+      "color": "#3B82F6",
+      "icon": "✓"
+    },
+    "conflicts": {
+      "name": "Merge conflicts",
+      "color": "#EF4444",
+      "icon": "!"
+    },
+    "untracked": {
+      "name": "Untracked files",
+      "color": "#6B7280",
+      "icon": "?"
+    }
+  },
+  "examples": [
+    {
+      "name": "Clean branch",
+      "display": "🌿 main ✓"
+    },
+    {
+      "name": "Modified files",
+      "display": "🌿 feature/auth ● 3 modified"
+    },
+    {
+      "name": "Ahead of remote",
+      "display": "🌿 develop ✓ ↑2"
+    },
+    {
+      "name": "Behind remote",
+      "display": "🌿 main ● 2 modified ↓1"
+    },
+    {
+      "name": "Conflicts",
+      "display": "🌿 feature/merge ! 2 conflicts"
+    },
+    {
+      "name": "With stash",
+      "display": "🌿 main ✓ 📦 1"
+    },
+    {
+      "name": "Complex status",
+      "display": "🌿 feature/new-ui ● 5 modified + 2 untracked ↑3 ↓1 📦 2"
+    },
+    {
+      "name": "Hotfix branch",
+      "display": "🔥 hotfix/critical-bug ● 1 modified ↑1"
+    }
+  ],
+  "detailedFormat": {
+    "template": "{branch_type_icon} {branch_name} | {status_summary} | {remote_status}",
+    "status_summary": "Modified: {modified} | Staged: {staged} | Untracked: {untracked}",
+    "remote_status": "Ahead: {ahead} | Behind: {behind}"
+  },
+  "compactFormat": {
+    "template": "{icon}{branch}{indicators}",
+    "abbreviations": {
+      "modified": "M",
+      "added": "A",
+      "deleted": "D",
+      "untracked": "U",
+      "staged": "S"
+    }
+  },
+  "gitInfo": {
+    "showLastCommit": false,
+    "lastCommitFormat": "📝 {message} ({time_ago})",
+    "showCommitHash": false,
+    "commitHashLength": 7,
+    "showRemoteUrl": false,
+    "showTags": true,
+    "tagFormat": "🏷️ {tag}"
+  },
+  "behavior": {
+    "autoUpdate": true,
+    "updateOnFileChange": true,
+    "updateOnGitOperation": true,
+    "cacheTimeout": 5000,
+    "showErrorState": true,
+    "errorIcon": "⚠️",
+    "noGitMessage": "Not a git repository"
+  },
+  "customization": {
+    "description": "Customize git branch status line",
+    "instructions": [
+      "1. Choose your preferred icon style (emoji, nerd font, simple)",
+      "2. Select format (compact, detailed, or custom)",
+      "3. Toggle specific indicators on/off",
+      "4. Adjust colors for different branch types",
+      "5. Set update interval based on performance needs"
+    ],
+    "tips": [
+      "Use compact format for smaller terminal windows",
+      "Enable detailed format when working with complex branches",
+      "Disable ahead/behind indicators if you work offline often",
+      "Customize branch type patterns for your workflow",
+      "Adjust update interval to balance freshness vs performance"
+    ]
+  },
+  "integration": {
+    "gitFlow": {
+      "enabled": true,
+      "detectWorkflow": true,
+      "showWorkflowHints": true
+    },
+    "githubFlow": {
+      "enabled": true,
+      "highlightPRBranches": true
+    },
+    "gitlabFlow": {
+      "enabled": true,
+      "showEnvironmentBranches": true
+    }
+  }
+}
