@@ -123,22 +123,30 @@ function renderPlugins() {
     const grid = document.getElementById('pluginsGrid');
     const plugins = filterAndSort(marketplaceData.plugins || [], 'plugins');
 
-    grid.innerHTML = plugins.map(plugin => `
-        <div class="card ${selectedComponents.has(`plugin:${plugin.id}`) ? 'selected' : ''}"
-             onclick="toggleComponent('plugin', '${plugin.id}')">
+    grid.innerHTML = plugins.map(plugin => {
+        const pluginId = plugin.name || plugin.id; // Support both old and new schema
+        const pluginIcon = plugin.icon || '🔌';
+        const pluginName = plugin.name ? formatName(plugin.name) : plugin.name;
+        const componentCount = plugin.agents ?
+            { agents: plugin.agents.length, commands: plugin.commands?.length || 0, hooks: plugin.hooks?.length || 0 } :
+            plugin.components;
+
+        return `
+        <div class="card ${selectedComponents.has(`plugin:${pluginId}`) ? 'selected' : ''}"
+             onclick="toggleComponent('plugin', '${pluginId}')">
             <div class="card-header">
-                <div class="card-icon">${plugin.icon || '🔌'}</div>
+                <div class="card-icon">${pluginIcon}</div>
             </div>
-            <div class="card-title">${plugin.name}</div>
+            <div class="card-title">${pluginName}</div>
             <div class="card-description">${plugin.description}</div>
             <div class="component-count">
-                ${getComponentCount(plugin.components)}
+                ${getComponentCount(componentCount)}
             </div>
             <div class="card-meta">
                 ${(plugin.tags || []).slice(0, 3).map(tag => `<span class="tag">${tag}</span>`).join('')}
             </div>
         </div>
-    `).join('');
+    `}).join('');
 }
 
 // Render agents
@@ -306,22 +314,25 @@ function generateCommand() {
     // Generate Claude Code plugin commands
     let commands = [];
 
+    // For plugins from zpaper-com/ClaudeKit marketplace
     if (components.plugins.length > 0) {
         components.plugins.forEach(plugin => {
-            commands.push(`/plugin install ${plugin}`);
+            commands.push(`/plugin install zpaper-com/ClaudeKit#${plugin}`);
         });
     }
     if (components.agents.length > 0) {
-        commands.push(`/agent install ${components.agents.join(' ')}`);
+        components.agents.forEach(agent => {
+            commands.push(`/agent install zpaper-com/ClaudeKit#${agent}`);
+        });
     }
     if (components.commands.length > 0) {
         components.commands.forEach(cmd => {
-            commands.push(`/command install ${cmd}`);
+            commands.push(`/command install zpaper-com/ClaudeKit#${cmd}`);
         });
     }
     if (components.hooks.length > 0) {
         components.hooks.forEach(hook => {
-            commands.push(`/hook install ${hook}`);
+            commands.push(`/hook install zpaper-com/ClaudeKit#${hook}`);
         });
     }
 
