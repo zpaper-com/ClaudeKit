@@ -3,21 +3,24 @@
   "version": "1.0.0",
   "description": "Production-ready Claude Code toolkit with essential development agents",
   "author": "zpaper-com",
-  "owner": "zpaper-com",
+  "owner": {
+    "name": "zpaper-com",
+    "url": "https://github.com/zpaper-com"
+  },
   "repository": "https://github.com/zpaper-com/ClaudeKit",
   "license": "MIT",
   "plugins": [
     {
       "name": "fullstack-pro",
       "description": "Complete full-stack development toolkit with frontend, backend, database, and TypeScript expertise",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/frontend-developer.md",
-        ".claude/agents/backend-architect.md",
-        ".claude/agents/fullstack-developer.md",
-        ".claude/agents/database-architect.md",
-        ".claude/agents/typescript-pro.md"
+        "./.claude/agents/frontend-developer.md",
+        "./.claude/agents/backend-architect.md",
+        "./.claude/agents/fullstack-developer.md",
+        "./.claude/agents/database-architect.md",
+        "./.claude/agents/typescript-pro.md"
       ],
       "commands": [],
       "hooks": []
@@ -25,160 +28,160 @@
     {
       "name": "code-quality-suite",
       "description": "Comprehensive code quality toolkit with review, refactoring, debugging, and testing",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/code-reviewer.md",
-        ".claude/agents/debugger.md",
-        ".claude/agents/test-engineer.md"
+        "./.claude/agents/code-reviewer.md",
+        "./.claude/agents/debugger.md",
+        "./.claude/agents/test-engineer.md"
       ],
       "commands": [
-        ".claude/commands/code-review.md",
-        ".claude/commands/refactor-code.md"
+        "./.claude/commands/code-review.md",
+        "./.claude/commands/refactor-code.md"
       ],
       "hooks": []
     },
     {
       "name": "documentation-master",
       "description": "Complete documentation suite for architecture, APIs, and project docs",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/api-documenter.md"
+        "./.claude/agents/api-documenter.md"
       ],
       "commands": [
-        ".claude/commands/create-architecture-documentation.md",
-        ".claude/commands/generate-api-documentation.md",
-        ".claude/commands/update-docs.md"
+        "./.claude/commands/create-architecture-documentation.md",
+        "./.claude/commands/generate-api-documentation.md",
+        "./.claude/commands/update-docs.md"
       ],
       "hooks": []
     },
     {
       "name": "product-workflow",
       "description": "Product management and release workflow with PRDs and changelogs",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [],
       "commands": [
-        ".claude/commands/create-prd.md",
-        ".claude/commands/add-changelog.md"
+        "./.claude/commands/create-prd.md",
+        "./.claude/commands/add-changelog.md"
       ],
       "hooks": [
-        ".claude/hooks/git-commit-settings.json"
+        "./.claude/hooks/git-commit-settings.json"
       ]
     },
     {
       "name": "ui-ux-studio",
       "description": "Design-focused toolkit with UI/UX expertise and visual status indicators",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/ui-ux-designer.md",
-        ".claude/agents/frontend-developer.md"
+        "./.claude/agents/ui-ux-designer.md",
+        "./.claude/agents/frontend-developer.md"
       ],
       "commands": [],
       "hooks": [
-        ".claude/hooks/colorful-statusline.json"
+        "./.claude/hooks/colorful-statusline.json"
       ]
     },
     {
       "name": "architect-toolkit",
       "description": "Senior-level architecture review and system design guidance",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/architect-review.md",
-        ".claude/agents/backend-architect.md",
-        ".claude/agents/database-architect.md"
+        "./.claude/agents/architect-review.md",
+        "./.claude/agents/backend-architect.md",
+        "./.claude/agents/database-architect.md"
       ],
       "commands": [
-        ".claude/commands/create-architecture-documentation.md"
+        "./.claude/commands/create-architecture-documentation.md"
       ],
       "hooks": []
     },
     {
       "name": "git-workflow-pro",
       "description": "Enhanced git workflow with smart commits, branch tracking, and changelogs",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [],
       "commands": [
-        ".claude/commands/add-changelog.md"
+        "./.claude/commands/add-changelog.md"
       ],
       "hooks": [
-        ".claude/hooks/git-commit-settings.json",
-        ".claude/hooks/git-branch-statusline.json"
+        "./.claude/hooks/git-commit-settings.json",
+        "./.claude/hooks/git-branch-statusline.json"
       ]
     },
     {
       "name": "devops-complete",
       "description": "Full DevOps toolkit with CI/CD expertise and deployment workflows",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/devops-engineer.md"
+        "./.claude/agents/devops-engineer.md"
       ],
       "commands": [
-        ".claude/commands/add-changelog.md"
+        "./.claude/commands/add-changelog.md"
       ],
       "hooks": [
-        ".claude/hooks/git-commit-settings.json"
+        "./.claude/hooks/git-commit-settings.json"
       ]
     },
     {
       "name": "startup-essentials",
       "description": "Everything a startup needs: full-stack dev, product management, and quality tools",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/fullstack-developer.md",
-        ".claude/agents/ui-ux-designer.md",
-        ".claude/agents/code-reviewer.md",
-        ".claude/agents/test-engineer.md"
+        "./.claude/agents/fullstack-developer.md",
+        "./.claude/agents/ui-ux-designer.md",
+        "./.claude/agents/code-reviewer.md",
+        "./.claude/agents/test-engineer.md"
       ],
       "commands": [
-        ".claude/commands/create-prd.md",
-        ".claude/commands/code-review.md",
-        ".claude/commands/generate-api-documentation.md",
-        ".claude/commands/add-changelog.md"
+        "./.claude/commands/create-prd.md",
+        "./.claude/commands/code-review.md",
+        "./.claude/commands/generate-api-documentation.md",
+        "./.claude/commands/add-changelog.md"
       ],
       "hooks": [
-        ".claude/hooks/git-commit-settings.json",
-        ".claude/hooks/colorful-statusline.json"
+        "./.claude/hooks/git-commit-settings.json",
+        "./.claude/hooks/colorful-statusline.json"
       ]
     },
     {
       "name": "enterprise-complete",
       "description": "Enterprise-grade development with all agents, commands, and quality controls",
-      "source": "https://github.com/zpaper-com/ClaudeKit",
+      "source": "./",
       "version": "1.0.0",
       "agents": [
-        ".claude/agents/frontend-developer.md",
-        ".claude/agents/backend-architect.md",
-        ".claude/agents/fullstack-developer.md",
-        ".claude/agents/ui-ux-designer.md",
-        ".claude/agents/devops-engineer.md",
-        ".claude/agents/code-reviewer.md",
-        ".claude/agents/debugger.md",
-        ".claude/agents/test-engineer.md",
-        ".claude/agents/typescript-pro.md",
-        ".claude/agents/database-architect.md",
-        ".claude/agents/architect-review.md",
-        ".claude/agents/api-documenter.md"
+        "./.claude/agents/frontend-developer.md",
+        "./.claude/agents/backend-architect.md",
+        "./.claude/agents/fullstack-developer.md",
+        "./.claude/agents/ui-ux-designer.md",
+        "./.claude/agents/devops-engineer.md",
+        "./.claude/agents/code-reviewer.md",
+        "./.claude/agents/debugger.md",
+        "./.claude/agents/test-engineer.md",
+        "./.claude/agents/typescript-pro.md",
+        "./.claude/agents/database-architect.md",
+        "./.claude/agents/architect-review.md",
+        "./.claude/agents/api-documenter.md"
       ],
       "commands": [
-        ".claude/commands/create-architecture-documentation.md",
-        ".claude/commands/refactor-code.md",
-        ".claude/commands/code-review.md",
-        ".claude/commands/add-changelog.md",
-        ".claude/commands/update-docs.md",
-        ".claude/commands/create-prd.md",
-        ".claude/commands/generate-api-documentation.md"
+        "./.claude/commands/create-architecture-documentation.md",
+        "./.claude/commands/refactor-code.md",
+        "./.claude/commands/code-review.md",
+        "./.claude/commands/add-changelog.md",
+        "./.claude/commands/update-docs.md",
+        "./.claude/commands/create-prd.md",
+        "./.claude/commands/generate-api-documentation.md"
       ],
       "hooks": [
-        ".claude/hooks/git-commit-settings.json",
-        ".claude/hooks/colorful-statusline.json",
-        ".claude/hooks/git-branch-statusline.json"
+        "./.claude/hooks/git-commit-settings.json",
+        "./.claude/hooks/colorful-statusline.json",
+        "./.claude/hooks/git-branch-statusline.json"
       ]
     }
   ]
