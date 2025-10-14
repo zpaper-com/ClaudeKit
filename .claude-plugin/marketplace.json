@@ -217,6 +217,17 @@
       ],
       "commands": [],
       "hooks": []
+    },
+    {
+      "name": "context-monitor",
+      "description": "Real-time context usage monitor with visual progress bar, token tracking, and cost display",
+      "source": "./",
+      "version": "1.0.0",
+      "agents": [],
+      "commands": [],
+      "hooks": [
+        "./.claude/hooks/context-monitor-statusline.json"
+      ]
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "python3 -c \"import json, sys, os; data = json.load(sys.stdin); context_file = open(data['transcript_path']); transcript = json.load(context_file); context_file.close(); messages = transcript.get('messages', []); total_tokens = sum(len(json.dumps(msg)) for msg in messages) // 4; max_tokens = 200000; usage_pct = min(100, int((total_tokens / max_tokens) * 100)); bar_length = 20; filled = int(bar_length * usage_pct / 100); bar = '█' * filled + '░' * (bar_length - filled); color = '\\033[92m' if usage_pct < 50 else '\\033[93m' if usage_pct < 80 else '\\033[91m'; reset = '\\033[0m'; model = data['model']['display_name']; cwd = os.path.basename(data['workspace']['current_dir']); cost = data['cost']['total_cost_usd']; print(f'{color}{model}{reset} | 📁 {cwd} | Context: [{bar}] {usage_pct}% ({total_tokens:,}/{max_tokens:,}) | 💰 ${cost:.4f}')\"",
+    "padding": 1
+  }
+}
