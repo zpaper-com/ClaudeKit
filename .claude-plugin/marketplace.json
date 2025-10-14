@@ -67,7 +67,7 @@
         "./.claude/commands/add-changelog.md"
       ],
       "hooks": [
-        "./.claude/hooks/git-commit-settings.json"
+        "./.claude/settings/git-commit-settings.json"
       ]
     },
     {
@@ -81,7 +81,7 @@
       ],
       "commands": [],
       "hooks": [
-        "./.claude/hooks/colorful-statusline.json"
+        "./.claude/settings/colorful-statusline.json"
       ]
     },
     {
@@ -110,7 +110,7 @@
       ],
       "hooks": [
         "./.claude/hooks/git-commit-settings.json",
-        "./.claude/hooks/git-branch-statusline.json"
+        "./.claude/settings/git-branch-statusline.json"
       ]
     },
     {
@@ -125,7 +125,7 @@
         "./.claude/commands/add-changelog.md"
       ],
       "hooks": [
-        "./.claude/hooks/git-commit-settings.json"
+        "./.claude/settings/git-commit-settings.json"
       ]
     },
     {
@@ -147,7 +147,7 @@
       ],
       "hooks": [
         "./.claude/hooks/git-commit-settings.json",
-        "./.claude/hooks/colorful-statusline.json"
+        "./.claude/settings/colorful-statusline.json"
       ]
     },
     {
@@ -180,8 +180,8 @@
       ],
       "hooks": [
         "./.claude/hooks/git-commit-settings.json",
-        "./.claude/hooks/colorful-statusline.json",
-        "./.claude/hooks/git-branch-statusline.json"
+        "./.claude/settings/colorful-statusline.json",
+        "./.claude/settings/git-branch-statusline.json"
       ]
     },
     {
@@ -226,7 +226,7 @@
       "agents": [],
       "commands": [],
       "hooks": [
-        "./.claude/hooks/context-monitor-statusline.json"
+        "./.claude/settings/context-monitor-statusline.json"
       ]
     }
   ]
