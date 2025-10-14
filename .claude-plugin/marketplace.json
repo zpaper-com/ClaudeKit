@@ -205,6 +205,18 @@
       ],
       "commands": [],
       "hooks": []
+    },
+    {
+      "name": "bun-stack",
+      "description": "Complete Bun ecosystem: runtime expert + Elysia web framework for high-performance full-stack apps",
+      "source": "./",
+      "version": "1.0.0",
+      "agents": [
+        "./.claude/agents/bun-expert.md",
+        "./.claude/agents/elysia-expert.md"
+      ],
+      "commands": [],
+      "hooks": []
     }
   ]
 }
